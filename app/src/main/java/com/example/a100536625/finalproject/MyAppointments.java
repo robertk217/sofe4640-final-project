@@ -8,6 +8,8 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.RectF;
+import android.icu.util.Calendar;
+import android.provider.CalendarContract;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -56,7 +58,11 @@ public class MyAppointments extends AppCompatActivity
         List<Appointment> appointments = appointmentHelper.getAllAppointments();
         appointmentArrayAdapter = new AppointmentArrayAdapter(this, appointments);
         appointmentList.setAdapter(appointmentArrayAdapter);
+
+
     }
+
+
 
     private void showEditAppointment(long id) {
         Intent editAppointmentIntent = new Intent(this, EditAppointmentActivity.class);
@@ -89,5 +95,5 @@ public class MyAppointments extends AppCompatActivity
         showEditAppointment(-1);
     }
 
-    
+
 }

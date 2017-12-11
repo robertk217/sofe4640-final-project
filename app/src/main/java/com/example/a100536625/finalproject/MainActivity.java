@@ -1,7 +1,9 @@
 package com.example.a100536625.finalproject;
 
 import android.content.Intent;
+import android.icu.util.Calendar;
 import android.os.Bundle;
+import android.provider.CalendarContract;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
@@ -14,6 +16,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
     }
 public void onSearch(View v) {
     //Intent intent = new Intent(this, SearchActivity.class);

@@ -1,7 +1,9 @@
 package com.example.a100536625.finalproject;
 
 import android.content.Intent;
+import android.icu.util.Calendar;
 import android.os.Bundle;
+import android.provider.CalendarContract;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -51,6 +53,16 @@ public class EditAppointmentActivity extends AppCompatActivity {
         if (id == -1) {
             // add a new appointment
             appointmentHelper.createAppointment(name, date, time, notes);
+
+            String[] split = date.split("/");
+            int year = Integer.parseInt(split[0]);
+            int month = Integer.parseInt(split[1]) - 1;
+            int day = Integer.parseInt(split[2]);
+            split = time.split(":");
+            int hours = Integer.parseInt(split[0]);
+            int mins = Integer.parseInt(split[1]);
+            updateCalendar(year, month, day, hours, mins, name, notes);
+
         } else {
             // update the contact
             Appointment appointment = new Appointment(name, date, time, notes);
@@ -58,6 +70,22 @@ public class EditAppointmentActivity extends AppCompatActivity {
 
             appointmentHelper.updateAppointment(appointment);
         }
+    }
+    public void updateCalendar(int year, int month, int day, int hours, int mins, String name, String notes) {
+        Calendar beginTime = Calendar.getInstance();
+        beginTime.set(year, month, day, hours, mins);
+        Calendar endTime = Calendar.getInstance();
+       // endTime.set(2012, 0, 19, 8, 30);
+        Intent intent = new Intent(Intent.ACTION_INSERT)
+                .setData(CalendarContract.Events.CONTENT_URI)
+                .putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME, beginTime.getTimeInMillis())
+                //.putExtra(CalendarContract.EXTRA_EVENT_END_TIME, endTime.getTimeInMillis())
+                .putExtra(CalendarContract.Events.TITLE, name)
+                .putExtra(CalendarContract.Events.DESCRIPTION, notes)
+                //.putExtra(CalendarContract.Events.EVENT_LOCATION, "The gym")
+                .putExtra(CalendarContract.Events.AVAILABILITY, CalendarContract.Events.AVAILABILITY_BUSY)
+                .putExtra(Intent.EXTRA_EMAIL, "tom@example.com");
+        startActivity(intent);
     }
 
     private void deleteAppointment() {

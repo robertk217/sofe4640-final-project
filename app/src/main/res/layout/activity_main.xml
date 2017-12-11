@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/doctor2">
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="169dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="21dp"
+        android:layout_marginRight="0dp"
+        android:backgroundTint="#80a0ff"
+        android:onClick="onSearch"
+        android:text="find a doctor"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/button2"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:layout_editor_absoluteX="215dp" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="176dp"
+        android:layout_height="46dp"
+        android:layout_marginBottom="87dp"
+        android:layout_marginRight="-1dp"
+        android:backgroundTint="#ff2050"
+        android:onClick="onAppt"
+        android:text="appointments"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:layout_editor_absoluteX="208dp" />
+</android.support.constraint.ConstraintLayout>

@@ -48,11 +48,11 @@ public class SingleDoctorView extends AppCompatActivity {
         txtCity.setText(city);
     }
 
-    public void onBookAppointment() {
+    public void onBookAppointment(View v) {
         Intent intent = new Intent(this, EditAppointmentActivity.class);
         intent.putExtra("firstName", firstName);
         intent.putExtra("lastName", lastName);
-        startActivity(intent);
+        startActivityForResult(intent, 1);
     }
 
 }

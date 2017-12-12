@@ -21,6 +21,10 @@
 
         <activity android:name=".EditAppointmentActivity">
         </activity>
+        <activity android:name=".SearchDoctor">
+        </activity>
+        <activity android:name=".SingleDoctorView">
+        </activity>
     </application>
 
 </manifest>

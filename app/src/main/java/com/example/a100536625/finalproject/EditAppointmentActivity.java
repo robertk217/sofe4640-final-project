@@ -39,15 +39,18 @@ public class EditAppointmentActivity extends AppCompatActivity {
         appointmentHelper = new AppointmentHelper(this);
         Appointment appointment = appointmentHelper.getAppointment(id);
 
-        if (firstName != null && lastName != null){
-            txtName.setText("Dr." + firstName + " " + lastName);
-        }
+
 
         txtName = (EditText) findViewById(R.id.txtName);
         txtDate = (EditText) findViewById(R.id.txtDate);
         txtTime = (EditText) findViewById(R.id.txtTime);
         txtNotes = (EditText) findViewById(R.id.txtNotes);
 
+        if (getCallingActivity().getClassName().equals(SingleDoctorView.class.getName())) {
+            if (firstName != null && lastName != null) {
+                txtName.setText("Dr." + firstName + " " + lastName);
+            }
+        }
         if (appointment != null) {
             txtName.setText(appointment.getName());
             txtDate.setText(appointment.getDate());

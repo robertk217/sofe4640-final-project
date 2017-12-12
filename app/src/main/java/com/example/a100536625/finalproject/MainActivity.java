@@ -20,8 +20,8 @@ public class MainActivity extends AppCompatActivity {
 
     }
 public void onSearch(View v) {
-    //Intent intent = new Intent(this, SearchActivity.class);
-    //startActivity(intent);
+    Intent intent = new Intent(this, SearchDoctor.class);
+    startActivity(intent);
 }
 
 public void onAppt(View v) {

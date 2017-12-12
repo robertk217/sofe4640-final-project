@@ -35,11 +35,8 @@ public class EditAppointmentActivity extends AppCompatActivity {
         // Get the results of last name
         lastName = callingIntent.getStringExtra("lastName");
 
-
         appointmentHelper = new AppointmentHelper(this);
         Appointment appointment = appointmentHelper.getAppointment(id);
-
-
 
         txtName = (EditText) findViewById(R.id.txtName);
         txtDate = (EditText) findViewById(R.id.txtDate);
@@ -48,7 +45,7 @@ public class EditAppointmentActivity extends AppCompatActivity {
 
         if (getCallingActivity().getClassName().equals(SingleDoctorView.class.getName())) {
             if (firstName != null && lastName != null) {
-                txtName.setText("Dr." + firstName + " " + lastName);
+                txtName.setText("Dr." + " " + firstName + " " + lastName);
             }
         }
         if (appointment != null) {
@@ -69,7 +66,7 @@ public class EditAppointmentActivity extends AppCompatActivity {
             // add a new appointment
             appointmentHelper.createAppointment(name, date, time, notes);
 
-            String[] split = date.split("/");
+            String[] split = date.split("/");       // split all the appointment fields into individual units which is needed for the updateCalendar() call
             int year = Integer.parseInt(split[0]);
             int month = Integer.parseInt(split[1]) - 1;
             int day = Integer.parseInt(split[2]);
@@ -79,25 +76,25 @@ public class EditAppointmentActivity extends AppCompatActivity {
             updateCalendar(year, month, day, hours, mins, name, notes);
 
         } else {
-            // update the contact
+            // update the appointment
             Appointment appointment = new Appointment(name, date, time, notes);
             appointment.setId(id);
 
             appointmentHelper.updateAppointment(appointment);
         }
     }
-    public void updateCalendar(int year, int month, int day, int hours, int mins, String name, String notes) {
+    public void updateCalendar(int year, int month, int day, int hours, int mins, String name, String notes) {  //integrate appointment data with Google Calendar
         Calendar beginTime = Calendar.getInstance();
         beginTime.set(year, month, day, hours, mins);
         Calendar endTime = Calendar.getInstance();
-       // endTime.set(2012, 0, 19, 8, 30);
+
         Intent intent = new Intent(Intent.ACTION_INSERT)
                 .setData(CalendarContract.Events.CONTENT_URI)
                 .putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME, beginTime.getTimeInMillis())
-                //.putExtra(CalendarContract.EXTRA_EVENT_END_TIME, endTime.getTimeInMillis())
+
                 .putExtra(CalendarContract.Events.TITLE, name)
                 .putExtra(CalendarContract.Events.DESCRIPTION, notes)
-                //.putExtra(CalendarContract.Events.EVENT_LOCATION, "The gym")
+
                 .putExtra(CalendarContract.Events.AVAILABILITY, CalendarContract.Events.AVAILABILITY_BUSY)
                 .putExtra(Intent.EXTRA_EMAIL, "tom@example.com");
         startActivity(intent);

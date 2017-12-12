@@ -4,4 +4,8 @@
     <string name="last_name_label">Last Name: </string>
     <string name="location_label">Location: </string>
     <string name="city_label">City: </string>
+    <string name="doc_name">Doctor\'s Name:</string>
+    <string name="appt_date">Appointment Date:</string>
+    <string name="appt_time">Appointment Time:</string>
+    <string name="notes">Notes:</string>
 </resources>

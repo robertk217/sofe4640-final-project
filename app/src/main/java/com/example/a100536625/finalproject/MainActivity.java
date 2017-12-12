@@ -2,6 +2,7 @@ package com.example.a100536625.finalproject;
 
 import android.content.Intent;
 import android.icu.util.Calendar;
+import android.net.Uri;
 import android.os.Bundle;
 import android.provider.CalendarContract;
 import android.support.v7.app.AppCompatActivity;
@@ -26,6 +27,11 @@ public void onSearch(View v) {
 
 public void onAppt(View v) {
     Intent intent = new Intent(this, MyAppointments.class);
+    startActivity(intent);
+}
+
+public void onInfo(View v) {  //get prescription drug info from internet
+    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.drugs.com"));
     startActivity(intent);
 }
 }

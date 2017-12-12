@@ -26,8 +26,6 @@ public class AppointmentArrayAdapter extends ArrayAdapter<Appointment> {
     public View getView(int position, View reusableView, ViewGroup parent) {
         Appointment appointment = data.get(position);
 
-        Log.i("SQLite", "Showing - " + appointment);
-
         if (reusableView == null) {
             // create a new view (this is the first item)
             LayoutInflater inflater = LayoutInflater.from(context);

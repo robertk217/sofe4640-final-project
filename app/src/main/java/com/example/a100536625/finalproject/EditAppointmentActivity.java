@@ -43,7 +43,7 @@ public class EditAppointmentActivity extends AppCompatActivity {
         txtTime = (EditText) findViewById(R.id.txtTime);
         txtNotes = (EditText) findViewById(R.id.txtNotes);
 
-        if (getCallingActivity().getClassName().equals(SingleDoctorView.class.getName())) {
+        if (getCallingActivity().getClassName().equals(SingleDoctorView.class.getName())) { //check if calling intent is SingleDoctorView
             if (firstName != null && lastName != null) {
                 txtName.setText("Dr." + " " + firstName + " " + lastName);
             }
@@ -84,19 +84,16 @@ public class EditAppointmentActivity extends AppCompatActivity {
         }
     }
     public void updateCalendar(int year, int month, int day, int hours, int mins, String name, String notes) {  //integrate appointment data with Google Calendar
-        Calendar beginTime = Calendar.getInstance();
-        beginTime.set(year, month, day, hours, mins);
-        Calendar endTime = Calendar.getInstance();
+        Calendar startTime = Calendar.getInstance();
+        startTime.set(year, month, day, hours, mins);
 
         Intent intent = new Intent(Intent.ACTION_INSERT)
                 .setData(CalendarContract.Events.CONTENT_URI)
-                .putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME, beginTime.getTimeInMillis())
-
+                .putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME, startTime.getTimeInMillis())
                 .putExtra(CalendarContract.Events.TITLE, name)
                 .putExtra(CalendarContract.Events.DESCRIPTION, notes)
-
                 .putExtra(CalendarContract.Events.AVAILABILITY, CalendarContract.Events.AVAILABILITY_BUSY)
-                .putExtra(Intent.EXTRA_EMAIL, "tom@example.com");
+                .putExtra(Intent.EXTRA_EMAIL, "tom.student@uoit.net");
         startActivity(intent);
     }
 

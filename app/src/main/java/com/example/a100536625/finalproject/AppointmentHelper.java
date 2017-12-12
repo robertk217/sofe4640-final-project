@@ -96,8 +96,6 @@ public class AppointmentHelper extends SQLiteOpenHelper {
             appointment.setId(id);
         }
 
-        Log.i("SQLite", "createAppointment(): " + appointment);
-
         return appointment;
     }
 
@@ -127,8 +125,6 @@ public class AppointmentHelper extends SQLiteOpenHelper {
 
             cursor.moveToNext();
         } while (!cursor.isAfterLast());
-
-        Log.i("SQLite", "getAllAppointments(): num = " + appointments.size());
 
         return appointments;
     }

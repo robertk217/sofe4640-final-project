@@ -18,6 +18,9 @@ public class EditAppointmentActivity extends AppCompatActivity {
     private EditText txtTime;
     private EditText txtNotes;
 
+    private String firstName;
+    private String lastName;
+
     private AppointmentHelper appointmentHelper;
 
     @Override
@@ -27,9 +30,18 @@ public class EditAppointmentActivity extends AppCompatActivity {
 
         Intent callingIntent = getIntent();
         id = callingIntent.getLongExtra("id", -1);
+        // Get the results of first name
+        firstName = callingIntent.getStringExtra("firstName");
+        // Get the results of last name
+        lastName = callingIntent.getStringExtra("lastName");
+
 
         appointmentHelper = new AppointmentHelper(this);
         Appointment appointment = appointmentHelper.getAppointment(id);
+
+        if (firstName != null && lastName != null){
+            txtName.setText("Dr." + firstName + " " + lastName);
+        }
 
         txtName = (EditText) findViewById(R.id.txtName);
         txtDate = (EditText) findViewById(R.id.txtDate);

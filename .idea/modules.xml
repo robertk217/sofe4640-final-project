@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/sofe4640-final-project-master.iml" filepath="$PROJECT_DIR$/sofe4640-final-project-master.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sofe4640-final-project.iml" filepath="$PROJECT_DIR$/sofe4640-final-project.iml" />
     </modules>
   </component>
 </project>

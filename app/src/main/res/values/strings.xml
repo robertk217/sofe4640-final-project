@@ -1,7 +1,3 @@
 <resources>
-    <string name="app_name">Doc App</string>
-    <string name="first_name_label">First Name: </string>
-    <string name="last_name_label">Last Name: </string>
-    <string name="location_label">Location: </string>
-    <string name="city_label">City: </string>
+    <string name="app_name">FinalProject</string>
 </resources>

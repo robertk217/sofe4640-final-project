@@ -1,25 +1,49 @@
 package com.example.a100536625.finalproject;
 
 import android.content.Intent;
+import android.content.res.AssetFileDescriptor;
+import android.content.res.Resources;
 import android.icu.util.Calendar;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.CalendarContract;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
+
+import java.io.IOException;
 
 /**
  * Created by 100536625 on 12/10/2017.
  */
 
 public class MainActivity extends AppCompatActivity {
+
+    private MediaPlayer musicMediaPlayer;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        // load a background song
+        musicMediaPlayer = new MediaPlayer();
+        Resources res = getResources();
+        AssetFileDescriptor musicFd = res.openRawResourceFd(R.raw.slide);
+        try {
+            musicMediaPlayer.setDataSource(musicFd.getFileDescriptor(),
+                    musicFd.getStartOffset(),
+                    musicFd.getLength());
 
-
+            musicMediaPlayer.prepare(); // blocking
+            musicMediaPlayer.setLooping(true);
+            musicMediaPlayer.start();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
+
+
 public void onSearch(View v) {
     Intent intent = new Intent(this, SearchDoctor.class);
     startActivity(intent);

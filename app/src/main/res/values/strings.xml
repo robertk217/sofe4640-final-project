@@ -8,4 +8,9 @@
     <string name="appt_date">Appointment Date:</string>
     <string name="appt_time">Appointment Time:</string>
     <string name="notes">Notes:</string>
+    <string name="last_name_search">Last Name Search</string>
+    <string name="book_appointment">Book Appointment</string>
+    <string name="appointment">appointments</string>
+    <string name="find_a_doctor">find a doctor</string>
+    <string name="drugs">drug info</string>
 </resources>

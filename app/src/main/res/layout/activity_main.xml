@@ -14,7 +14,7 @@
         android:layout_marginRight="0dp"
         android:backgroundTint="#80a0ff"
         android:onClick="onSearch"
-        android:text="find a doctor"
+        android:text="@string/find_a_doctor"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/button2"
         app:layout_constraintRight_toRightOf="parent" />
@@ -27,7 +27,7 @@
         android:layout_marginRight="-1dp"
         android:backgroundTint="#ff2050"
         android:onClick="onAppt"
-        android:text="appointments"
+        android:text="@string/appointment"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toRightOf="parent" />
@@ -38,7 +38,7 @@
         android:layout_height="40dp"
         android:backgroundTint="#00ff00"
         android:onClick="onInfo"
-        android:text="drug info"
+        android:text="@string/drugs"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginBottom="37dp"
         android:layout_marginRight="31dp"

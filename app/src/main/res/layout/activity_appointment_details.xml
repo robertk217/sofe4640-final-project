@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@drawable/background">
 
 
     <TextView
@@ -14,6 +15,7 @@
         android:layout_marginLeft="31dp"
         android:layout_marginTop="33dp"
         android:text="@string/doc_name"
+        android:textSize="18sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -24,6 +26,7 @@
         android:layout_marginLeft="31dp"
         android:layout_marginTop="28dp"
         android:text="@string/appt_date"
+        android:textSize="18sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lblName" />
 
@@ -34,6 +37,7 @@
         android:layout_marginLeft="31dp"
         android:layout_marginTop="42dp"
         android:text="@string/appt_time"
+        android:textSize="18sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lblDate" />
 
@@ -42,67 +46,61 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        android:layout_marginLeft="28dp"
+        android:layout_marginLeft="31dp"
         android:layout_marginTop="64dp"
         android:text="@string/notes"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <EditText
-        android:id="@+id/txtName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginLeft="34dp"
-        android:layout_marginTop="16dp"
-        android:ems="10"
-        android:inputType="text"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toRightOf="@+id/lblName"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <EditText
-        android:id="@+id/txtDate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="401dp"
-        android:layout_marginLeft="23dp"
-        android:layout_marginTop="8dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toRightOf="@+id/lblDate"
-        app:layout_constraintTop_toBottomOf="@+id/txtName"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <EditText
-        android:id="@+id/txtTime"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="343dp"
-        android:layout_marginLeft="21dp"
-        android:layout_marginTop="8dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toRightOf="@+id/textView3"
-        app:layout_constraintTop_toBottomOf="@+id/txtDate"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.008" />
 
     <EditText
         android:id="@+id/txtNotes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="264dp"
-        android:layout_marginLeft="74dp"
+        android:layout_marginBottom="240dp"
+        android:layout_marginStart="84dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:inputType="textMultiLine"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/lblNotes"
+        app:layout_constraintTop_toBottomOf="@+id/txtTime"
+        app:layout_constraintVertical_bias="0.4" />
+
+    <EditText
+        android:id="@+id/txtName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toEndOf="@+id/lblName"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/txtDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:ems="10"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toRightOf="@+id/lblNotes"
-        app:layout_constraintTop_toBottomOf="@+id/txtTime"
-        app:layout_constraintVertical_bias="0.193" />
+        android:text="YYYY/MM/DD"
+        app:layout_constraintStart_toEndOf="@+id/lblDate"
+        app:layout_constraintTop_toBottomOf="@+id/txtName" />
+
+    <EditText
+        android:id="@+id/txtTime"
+        android:layout_width="wrap_content"
+        android:layout_height="47dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="HH:MM"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtDate" />
+
 </android.support.constraint.ConstraintLayout>

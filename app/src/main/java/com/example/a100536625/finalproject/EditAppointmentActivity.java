@@ -83,11 +83,11 @@ public class EditAppointmentActivity extends AppCompatActivity {
             appointmentHelper.updateAppointment(appointment);
         }
     }
-    public void updateCalendar(int year, int month, int day, int hours, int mins, String name, String notes) {  //integrate appointment data with Google Calendar
+    public void updateCalendar(int year, int month, int day, int hours, int mins, String name, String notes) {  //integrate appointment data with (Google) Calendar
         Calendar startTime = Calendar.getInstance();
         startTime.set(year, month, day, hours, mins);
 
-        Intent intent = new Intent(Intent.ACTION_INSERT)
+        Intent intent = new Intent(Intent.ACTION_INSERT)  //adapted from https://developer.android.com/guide/topics/providers/calendar-provider.html
                 .setData(CalendarContract.Events.CONTENT_URI)
                 .putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME, startTime.getTimeInMillis())
                 .putExtra(CalendarContract.Events.TITLE, name)

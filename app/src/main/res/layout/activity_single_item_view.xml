@@ -9,17 +9,16 @@
         android:id="@+id/first_name_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/last_name_label"
-        android:layout_below="@+id/last_name"
         android:layout_marginTop="72dp"
+        android:layout_centerHorizontal="true"
         android:text="@string/first_name_label" />
 
     <TextView
         android:id="@+id/first_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_toRightOf="@+id/first_name_label" />
+        android:layout_marginTop="72dp"
+        android:layout_toEndOf="@+id/last_name" />
 
     <TextView
         android:id="@+id/last_name_label"
@@ -75,8 +74,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="41dp"
-        android:text="@string/book_appointment"
-        android:onClick="onBookAppointment"/>
+        android:layout_marginBottom="76dp"
+        android:backgroundTint="#80a0ff"
+        android:onClick="onBookAppointment"
+        android:text="@string/book_appointment" />
 
 </RelativeLayout>

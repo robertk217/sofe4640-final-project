@@ -13,7 +13,6 @@ import android.widget.ListView;
 
 public class SearchDoctor extends Activity {
 
-    // Declare Variables
     ListView list;
     DoctorListViewAdapter adapter;
     EditText editsearch;
@@ -45,31 +44,30 @@ public class SearchDoctor extends Activity {
                 "Scarborough", "Mississauga", "Brampton", "Milton" };
 
         // Locate the ListView in listview_main.xml
-        list = (ListView) findViewById(R.id.listview);
+        list = findViewById(R.id.listview);
 
         for (int i = 0; i < firstName.length; i++)
         {
             Doctor wp = new Doctor(firstName[i], lastName[i],
                     location[i], city[i]);
-            // Binds all strings into an array
+           //connect strings to array
             arraylist.add(wp);
         }
 
-        // Pass results to ListViewAdapter Class
+        // connect array to adapter
         adapter = new DoctorListViewAdapter(this, arraylist);
 
-        // Binds the Adapter to the ListView
+        // connect adapter to a view
         list.setAdapter(adapter);
 
-        // Locate the EditText in listview_main.xml
-        editsearch = (EditText) findViewById(R.id.search);
+        // locate search in xml
+        editsearch = findViewById(R.id.search);
 
-        // Capture Text in EditText
+        // keep reading edit text for search
         editsearch.addTextChangedListener(new TextWatcher() {
 
             @Override
             public void afterTextChanged(Editable arg0) {
-                // TODO Auto-generated method stub
                 String text = editsearch.getText().toString().toLowerCase(Locale.getDefault());
                 adapter.filter(text);
             }
@@ -77,21 +75,12 @@ public class SearchDoctor extends Activity {
             @Override
             public void beforeTextChanged(CharSequence arg0, int arg1,
                                           int arg2, int arg3) {
-                // TODO Auto-generated method stub
             }
 
             @Override
             public void onTextChanged(CharSequence arg0, int arg1, int arg2,
                                       int arg3) {
-                // TODO Auto-generated method stub
             }
         });
     }
-
-    // Not using options menu in this tutorial
-   // @Override
-    //public boolean onCreateOptionsMenu(Menu menu) {
-       // getMenuInflater().inflate(R.menu.activity_search, menu);
-      //  return true;
-  //  }
 }

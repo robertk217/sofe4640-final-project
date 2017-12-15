@@ -25,15 +25,15 @@ public class SingleDoctorView extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_single_item_view);
         // Retrieve data from MainActivity on item click event
-        Intent i = getIntent();
+        Intent intent = getIntent();
         // Get the results of first name
-        firstName = i.getStringExtra("firstName");
+        firstName = intent.getStringExtra("firstName");
         // Get the results of last name
-        lastName = i.getStringExtra("lastName");
+        lastName = intent.getStringExtra("lastName");
         // Get the results of location
-        location = i.getStringExtra("location");
+        location = intent.getStringExtra("location");
         // Get the results of population
-        city = i.getStringExtra("city");
+        city = intent.getStringExtra("city");
 
         // Locate the TextViews in singleitemview.xml
         txtFirstName = (TextView) findViewById(R.id.first_name);
@@ -41,7 +41,7 @@ public class SingleDoctorView extends AppCompatActivity {
         txtLocation = (TextView) findViewById(R.id.location);
         txtCity = (TextView) findViewById(R.id.city);
 
-        // Load the results into the TextViews
+        // save the entered data into the TextViews
         txtFirstName.setText(firstName);
         txtLastName.setText(lastName);
         txtLocation.setText(location);

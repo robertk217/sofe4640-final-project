@@ -13,4 +13,10 @@
     <string name="appointment">appointments</string>
     <string name="find_a_doctor">find a doctor</string>
     <string name="drugs">drug info</string>
+    <string name="name">Name</string>
+    <string name="selected_date">09/12/2017</string>
+    <string name="selected_time">10:30 AM</string>
+    <string name="selected_notes">notes...</string>
+    <string name="format_date">YYYY/MM/DD</string>
+    <string name="format_time">HH:MM</string>
 </resources>

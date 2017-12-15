@@ -1,3 +1,27 @@
+/****************************************************************************************************/
+/*                                                                                                  */
+/*                 SOFE 4640 Mobile Application Development                                         */
+/*                                                                                                  */
+/*				   Final Project - Doc App                                                          */
+/*                                                                                                  */
+/*                 Instructor:  Dr. Randy Fortier                                                   */
+/*                                                                                                  */
+/*                 Date:  December 15, 2017                                                         */
+/*                                                                                                  */
+/*                                                                                                  */
+/*       Group Members:                                                                             */
+/*                                                                                                  */
+/*      Cherlyne Santhirarajan 100540235                                                            */
+/*      Shahrukh Zarir 100489271                                                                    */
+/*      Robert Kocovski 100536625                                                                   */
+/*                                                                                                  */
+/*                                                                                                  */
+/*                                                                                                  */
+/****************************************************************************************************/
+
+
+
+
 package com.example.a100536625.finalproject;
 
 import android.content.Intent;
